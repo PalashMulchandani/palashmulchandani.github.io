@@ -765,7 +765,7 @@ function drawGauge(id, pct, c1, c2, label, val){
   ctx.fillText(label,cx,cy+W*0.1);
 }
 
-// Animate gauges when visible - loops every 6.5s while section is in view
+// Animate gauges when visible - loops every 6 s while section is in view
 const gaugeData=[
   {id:"g1",pct:0.928,c1:"#00d4b1",c2:"#7c3aed",label:"PERCENTILE",val:"92.8"},
   {id:"g2",pct:0.944,c1:"#00d4b1",c2:"#0066cc",label:"SCORE %",val:"94.4"},
@@ -788,7 +788,7 @@ const gObs=new IntersectionObserver(entries=>{
     if(e.isIntersecting && !gaugeLoopActive){
       gaugeLoopActive=true;
       runGaugeCycle();
-      gaugeInterval=setInterval(runGaugeCycle,6500);
+      gaugeInterval=setInterval(runGaugeCycle,6000);
     } else if(!e.isIntersecting && gaugeLoopActive){
       gaugeLoopActive=false;
       clearInterval(gaugeInterval);
