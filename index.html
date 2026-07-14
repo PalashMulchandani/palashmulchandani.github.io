@@ -815,7 +815,7 @@ const heroGObs=new IntersectionObserver(entries=>{
     if(e.isIntersecting && !heroGaugeActive){
       heroGaugeActive=true;
       runHeroGauges();
-      heroGaugeInterval=setInterval(runHeroGauges,6500);
+      heroGaugeInterval=setInterval(runHeroGauges,6000);
     } else if(!e.isIntersecting && heroGaugeActive){
       heroGaugeActive=false;
       clearInterval(heroGaugeInterval);
